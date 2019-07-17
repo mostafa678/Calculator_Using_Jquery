@@ -1,0 +1,150 @@
+﻿
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title>
+        Student Registration
+    </title>
+    <style>
+        #header {
+            height: 50px;
+            background-color: burlywood;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        #menuBar {
+            background-color: beige;
+        }
+
+        #leftSidebar {
+            background-color: lightblue;
+            width: 25%;
+            float: left;
+        }
+
+        #mainContent {
+            background-color: aliceblue;
+            width: 50%;
+            float: left;
+        }
+
+        #rightSidebar {
+            background-color: lightblue;
+            width: 25%;
+            float: left;
+        }
+
+        #footer {
+            height: 30px;
+            width: 100%;
+            bottom: 0px;
+            background-color: burlywood;
+            color: azure;
+            text-align: center;
+        }
+    </style>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md" id="header">
+                    Calculator
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-1" id="leftSidebar">
+
+                        </div>
+                        <div class="col-10" id="mainContent">
+                            <div class="row"></div>
+                            <div class="col">
+
+                                <form>
+                                    <div class="form-row">
+
+                                        <div class="form-group col-md-6">
+                                            <label for="firstName">First Number</label>
+                                            <input type="text" class="form-control" id="firstNum" placeholder="First Number">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="lastName">Second Number</label>
+                                            <input type="text" class="form-control" id="secondNum" placeholder="Second Number">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="fullName">Result</label>
+                                            <input type="text" class="form-control" id="result" placeholder="Result">
+                                        </div>
+
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary" id="plus">+</button>
+                                    <button type="submit" class="btn btn-primary" id="minus">-</button>
+                                    <button type="submit" class="btn btn-primary" id="multi">*</button>
+                                    <button type="submit" class="btn btn-primary" id="div">/</button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="col-1" id="rightSidebar">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col jumbotron" id="footer">
+                    Footer
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#plus").click(function () {
+                var a = $("#firstNum").val();
+                var b = $("#secondNum").val();
+                var r = parseFloat(a) + parseInt(b);
+                $("#result").val(r);
+                return false;
+            });
+            $("#minus").click(function () {
+                var a = $("#firstNum").val();
+                var b = $("#secondNum").val();
+                var r = parseFloat(a) - parseInt(b);
+                $("#result").val(r);
+                return false;
+            });
+            $("#multi").click(function () {
+                var a = $("#firstNum").val();
+                var b = $("#secondNum").val();
+                var r = parseFloat(a) * parseInt(b);
+                $("#result").val(r);
+                return false;
+            });
+            $("#div").click(function () {
+                var a = $("#firstNum").val();
+                var b = $("#secondNum").val();
+                var r = parseFloat(a) / parseInt(b);
+                $("#result").val(r);
+                return false;
+            });
+        });
+
+    </script>
+
+
+
+</body>
+</html>
